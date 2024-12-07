@@ -1,0 +1,76 @@
+**Multimodal Model Test Plan**
+
+**Objective**: To evaluate and identify the best-performing combination of text, image, and multimodal features for the MultiModalClassifier, focusing on improving overall accuracy, efficiency, and robustness.
+
+### 1. **Training Setup**
+- **Batch Size**: Fixed batch size of 24 for time-efficient training.
+- **Learning Rate & Epochs**: Use adaptive learning rate and early stopping to manage training length and convergence effectively.
+- **Evaluation Metrics**: Use accuracy, F1-score, confusion matrix, and validation loss to compare model performance.
+
+### 2. **Step-by-Step Testing Plan**
+
+#### **Step 1: Text-Only Model Training**
+- **Objective**: To determine the best-performing text model.
+- **Models to Train**:
+  - **DistilBERT**: Train with the text-only dataset.
+  - **RoBERTa**: Train with the text-only dataset.
+  - **XLNet**: Train with the text-only dataset.
+  - **ALBERT**: Train with the text-only dataset.
+- **Caption Comparison**:
+  - Compare models using text alone versus text concatenated with generated captions or using captions separately.
+  - Perform this comparison for **one text model only** (e.g., DistilBERT) and assume similar performance trends for other models.
+- **Evaluation**: Compare accuracy, F1-score, and validation loss across all text models.
+
+#### **Step 2: Image-Only Model Training**
+- **Objective**: To determine the best-performing image model.
+- **Models to Train**:
+  - **ResNet18**, **ResNet101**
+  - **MobileNetV2**, **InceptionV3**, **ResNeXt**, **DenseNet**, **Vision Transformer (ViT)**
+  - **Garbage Feature Extractor** (based on ViT)
+- **Evaluation**: Compare accuracy, F1-score, and validation loss across all image models to select the best-performing one.
+
+#### **Step 3: Multimodal Model Training**
+- **Objective**: To evaluate the performance of the multimodal setup combining the best text and image models.
+- **Model Configuration**:
+  - Combine the best-performing text model from Step 1 with the best-performing image model from Step 2.
+  - Train the model using both text and image inputs to evaluate any improvement in performance over single-modality models.
+- **Evaluation**: Measure accuracy, F1-score, confusion matrix, and validation loss to determine if the multimodal approach provides significant performance gains.
+
+### 3. **Additional Considerations**
+- **Early Stopping**: Use early stopping to prevent overfitting and optimize training time.
+- **Hyperparameter Optimization**: Consider using fine-tuning techniques to further optimize the best-performing models.
+- **Testing Priority**: Prioritize high-performing configurations from each step for further multimodal testing to save time and resources.
+
+### 4. **Performance Metrics**
+- **Accuracy**: To measure the correct predictions across all classes.
+- **F1-Score**: To evaluate the balance between precision and recall, especially in class-imbalanced situations.
+- **Confusion Matrix**: To analyze misclassification patterns and identify potential model weaknesses.
+- **Validation Loss**: To monitor convergence and generalization during training.
+
+### 5. **Conclusion and Analysis**
+- **Goal**: Identify the optimal combination of text, image, and caption features that yield the highest accuracy and balanced metrics.
+- **Report Findings**: Summarize the best model configurations, highlight any significant performance improvements, and propose future directions for model enhancement.
+
+
+text
+    512 -> 256 -> 4
+    image
+    768 -> 512 -> 256 -> 4
+    Image + text
+    (512+512) -> 256 -> 4
+
+1. Text
+2. Text + caption (seperate)
+3. Text + caption (concat)
+4. Caption only
+
+2.1. Text + caption (concat)
+
+3. Image only
+
+4. Image + Text + caption (concat)
+   ratio
+
+5. Image + caption <- from image
+
+6. ensemble
