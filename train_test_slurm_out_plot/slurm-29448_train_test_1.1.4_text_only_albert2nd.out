@@ -1,0 +1,209 @@
+no change     /home/tommy.li1/miniforge3/condabin/conda
+no change     /home/tommy.li1/miniforge3/bin/conda
+no change     /home/tommy.li1/miniforge3/bin/conda-env
+no change     /home/tommy.li1/miniforge3/bin/activate
+no change     /home/tommy.li1/miniforge3/bin/deactivate
+no change     /home/tommy.li1/miniforge3/etc/profile.d/conda.sh
+no change     /home/tommy.li1/miniforge3/etc/fish/conf.d/conda.fish
+no change     /home/tommy.li1/miniforge3/shell/condabin/Conda.psm1
+no change     /home/tommy.li1/miniforge3/shell/condabin/conda-hook.ps1
+no change     /home/tommy.li1/miniforge3/lib/python3.10/site-packages/xontrib/conda.xsh
+no change     /home/tommy.li1/miniforge3/etc/profile.d/conda.csh
+no change     /home/tommy.li1/.bashrc
+No action taken.
+[nltk_data] Downloading package wordnet to
+[nltk_data]     /home/tommy.li1/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/tommy.li1/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+2024-11-26 03:11:33.498608: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-11-26 03:11:33.521994: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-11-26 03:11:33.551568: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-11-26 03:11:33.560601: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-11-26 03:11:33.582063: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-11-26 03:11:36.733888: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-11-26 03:11:43 - INFO - Using device: cuda
+[2024-11-26 03:11:43] 
+Configuration:
+[2024-11-26 03:11:43] Mode: train
+[2024-11-26 03:11:43] Modality: text_only
+[2024-11-26 03:11:43] Criterion: CrossEntropyLoss
+[2024-11-26 03:11:43] 
+Model Settings:
+[2024-11-26 03:11:43] - Number of classes: 4
+[2024-11-26 03:11:43] - Text model: albert-base-v2
+[2024-11-26 03:11:43] - Image model: resnet18
+[2024-11-26 03:11:43] - Hidden sizes: [256]
+[2024-11-26 03:11:43] - Use text: True
+[2024-11-26 03:11:43] - Use image: False
+[2024-11-26 03:11:43] - Use caption: False
+[2024-11-26 03:11:43] - Caption mode: none
+[2024-11-26 03:11:43] - Use garbage feature: False
+[2024-11-26 03:11:43] - Use similarity: False
+[2024-11-26 03:11:43] 
+Training Settings:
+[2024-11-26 03:11:43] - Batch size: 24
+[2024-11-26 03:11:43] - Learning rate: 1e-05
+[2024-11-26 03:11:43] - Number of epochs: 50
+[2024-11-26 03:11:43] - Max sequence length: 300
+[2024-11-26 03:11:43] - Dropout rate: 0.3
+[2024-11-26 03:11:43] - Early stopping patience: 5
+[2024-11-26 03:11:43] - Weight decay: 0.01
+[2024-11-26 03:11:43] - Label smoothing: 0.0
+[2024-11-26 03:11:43] 
+2024-11-26 03:11:43 - INFO - Initialized albert-base-v2 tokenizer
+/home/tommy.li1/Git/ENGL645_Fall_2024_Proj/Project-Benchmark/main.py:365: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load('checkpoints/best_model.pt')
+[2024-11-26 03:11:43] Loading Train data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Train
+[2024-11-26 03:11:43] Loading Val data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Val
+[2024-11-26 03:11:43] Loading Test data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Test
+
+Train Dataset Statistics:
+Size: 10200
+Class distribution: {0: 2111, 1: 4355, 2: 1991, 3: 1743}
+
+Val Dataset Statistics:
+Size: 1800
+Class distribution: {0: 372, 1: 768, 2: 352, 3: 308}
+
+Test Dataset Statistics:
+Size: 3431
+Class distribution: {0: 695, 1: 1085, 2: 799, 3: 852}
+[2024-11-26 03:11:45] Phase 1: Training classifier with frozen feature extractors
+Model mode: False
+[2024-11-26 03:20:32] Epoch 1/50 - Train Loss: 0.5811 - Val Loss: 0.4402 - Val Acc: 0.8250
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-26 03:20:32] Save best_model.pt for Loss at epochs 1 
+Model mode: False
+[2024-11-26 03:29:23] Epoch 2/50 - Train Loss: 0.3387 - Val Loss: 0.4023 - Val Acc: 0.8528
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-26 03:29:23] Save best_model.pt for Loss at epochs 2 
+Model mode: False
+[2024-11-26 03:38:13] Epoch 3/50 - Train Loss: 0.2832 - Val Loss: 0.4599 - Val Acc: 0.8433
+Model mode: False
+[2024-11-26 03:47:03] Epoch 4/50 - Train Loss: 0.2175 - Val Loss: 0.4967 - Val Acc: 0.8372
+Model mode: False
+[2024-11-26 03:55:53] Epoch 5/50 - Train Loss: 0.1935 - Val Loss: 0.4346 - Val Acc: 0.8500
+Model mode: False
+[2024-11-26 04:04:44] Epoch 6/50 - Train Loss: 0.1732 - Val Loss: 0.4208 - Val Acc: 0.8650
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-26 04:04:44] Save best_model.pt for Accuracy at epochs 6 
+Model mode: False
+[2024-11-26 04:13:35] Epoch 7/50 - Train Loss: 0.1597 - Val Loss: 0.4136 - Val Acc: 0.8689
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-26 04:13:35] Save best_model.pt for Accuracy at epochs 7 
+Model mode: False
+[2024-11-26 04:22:25] Learning rate updated to: 1.0000000000000002e-06
+[2024-11-26 04:22:25] Epoch 8/50 - Train Loss: 0.1464 - Val Loss: 0.5095 - Val Acc: 0.8611
+Model mode: False
+[2024-11-26 04:31:16] Epoch 9/50 - Train Loss: 0.1089 - Val Loss: 0.3901 - Val Acc: 0.8872
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-26 04:31:16] Save best_model.pt for Loss at epochs 9 
+Model mode: False
+[2024-11-26 04:40:07] Epoch 10/50 - Train Loss: 0.0960 - Val Loss: 0.3904 - Val Acc: 0.8867
+Model mode: False
+[2024-11-26 04:48:57] Epoch 11/50 - Train Loss: 0.0844 - Val Loss: 0.4060 - Val Acc: 0.8861
+Model mode: False
+[2024-11-26 04:57:48] Epoch 12/50 - Train Loss: 0.0807 - Val Loss: 0.4178 - Val Acc: 0.8822
+Model mode: False
+[2024-11-26 05:06:38] Epoch 13/50 - Train Loss: 0.0746 - Val Loss: 0.4095 - Val Acc: 0.8806
+Model mode: False
+[2024-11-26 05:15:29] Epoch 14/50 - Train Loss: 0.0738 - Val Loss: 0.4230 - Val Acc: 0.8856
+[2024-11-26 05:15:29] Early stopping triggered after epochs 14 
+[2024-11-26 05:15:29] Loading best model from Phase 1
+[2024-11-26 05:15:30] Phase 2: Fine-tuning feature extractors
+
+Feature Extractor States:
+Text model exists: True
+Text model trainable: True
+Model mode: False
+[2024-11-26 05:24:20] Epoch 1/50 - Train Loss: 0.0989 - Val Loss: 0.4061 - Val Acc: 0.8856
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-26 05:24:20] Save best_model.pt for Loss at epochs 1 
+Model mode: False
+[2024-11-26 05:33:11] Epoch 2/50 - Train Loss: 0.0852 - Val Loss: 0.4148 - Val Acc: 0.8850
+Model mode: False
+[2024-11-26 05:42:01] Epoch 3/50 - Train Loss: 0.0799 - Val Loss: 0.4256 - Val Acc: 0.8811
+Model mode: False
+[2024-11-26 05:50:51] Epoch 4/50 - Train Loss: 0.0768 - Val Loss: 0.4375 - Val Acc: 0.8833
+Model mode: False
+[2024-11-26 05:59:42] Epoch 5/50 - Train Loss: 0.0693 - Val Loss: 0.4374 - Val Acc: 0.8772
+Model mode: False
+[2024-11-26 06:08:32] Epoch 6/50 - Train Loss: 0.0688 - Val Loss: 0.4454 - Val Acc: 0.8822
+[2024-11-26 06:08:32] Early stopping triggered after epochs 6 
+[nltk_data] Downloading package wordnet to
+[nltk_data]     /home/tommy.li1/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/tommy.li1/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+2024-11-26 06:08:47.835468: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-11-26 06:08:47.859281: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-11-26 06:08:47.888947: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-11-26 06:08:47.898072: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-11-26 06:08:47.920025: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-11-26 06:08:50.602785: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-11-26 06:08:55 - INFO - Using device: cuda
+[2024-11-26 06:08:55] 
+Configuration:
+[2024-11-26 06:08:55] Mode: test
+[2024-11-26 06:08:55] Modality: text_only
+[2024-11-26 06:08:55] Criterion: CrossEntropyLoss
+[2024-11-26 06:08:55] 
+Model Settings:
+[2024-11-26 06:08:55] - Number of classes: 4
+[2024-11-26 06:08:55] - Text model: albert-base-v2
+[2024-11-26 06:08:55] - Image model: resnet18
+[2024-11-26 06:08:55] - Hidden sizes: [256]
+[2024-11-26 06:08:55] - Use text: True
+[2024-11-26 06:08:55] - Use image: False
+[2024-11-26 06:08:55] - Use caption: False
+[2024-11-26 06:08:55] - Caption mode: none
+[2024-11-26 06:08:55] - Use garbage feature: False
+[2024-11-26 06:08:55] - Use similarity: False
+[2024-11-26 06:08:55] 
+Training Settings:
+[2024-11-26 06:08:55] - Batch size: 24
+[2024-11-26 06:08:55] - Learning rate: 1e-05
+[2024-11-26 06:08:55] - Number of epochs: 50
+[2024-11-26 06:08:55] - Max sequence length: 300
+[2024-11-26 06:08:55] - Dropout rate: 0.3
+[2024-11-26 06:08:55] - Early stopping patience: 5
+[2024-11-26 06:08:55] - Weight decay: 0.01
+[2024-11-26 06:08:55] - Label smoothing: 0.0
+[2024-11-26 06:08:55] 
+2024-11-26 06:08:56 - INFO - Initialized albert-base-v2 tokenizer
+/home/tommy.li1/Git/ENGL645_Fall_2024_Proj/Project-Benchmark/main.py:444: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load('checkpoints/best_model.pt')
+[2024-11-26 06:08:56] Loading Train data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Train
+[2024-11-26 06:08:56] Loading Val data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Val
+[2024-11-26 06:08:56] Loading Test data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Test
+
+Train Dataset Statistics:
+Size: 10200
+Class distribution: {0: 2111, 1: 4355, 2: 1991, 3: 1743}
+
+Val Dataset Statistics:
+Size: 1800
+Class distribution: {0: 372, 1: 768, 2: 352, 3: 308}
+
+Test Dataset Statistics:
+Size: 3431
+Class distribution: {0: 695, 1: 1085, 2: 799, 3: 852}
+Model mode: False
+test_results['accuracy'] 0.8265811716700671
+test_results['precision'] 0.8268277842358801
+test_results['recall'] 0.8265811716700671
+test_results['f1'] 0.8255881084951675
+test_results['loss'] 0.5898225916894739
+
+Confusion Matrix:
+--------------------------------------------------
+[[505 100  27  63]
+ [ 59 940  50  36]
+ [ 26  24 742   7]
+ [ 94  91  18 649]]
+Classification results saved to test_classification_results.json

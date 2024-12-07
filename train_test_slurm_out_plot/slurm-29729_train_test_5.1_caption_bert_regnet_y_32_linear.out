@@ -1,0 +1,257 @@
+[nltk_data] Downloading package wordnet to
+[nltk_data]     /home/jeffrey.wong1/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/jeffrey.wong1/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+2024-11-29 11:21:27 - INFO - Using device: cuda
+[2024-11-29 11:21:27] 
+Configuration:
+[2024-11-29 11:21:27] Mode: train
+[2024-11-29 11:21:27] Modality: caption_image
+[2024-11-29 11:21:27] Criterion: CrossEntropyLoss
+[2024-11-29 11:21:27] 
+Model Settings:
+[2024-11-29 11:21:27] - Number of classes: 4
+[2024-11-29 11:21:27] - Text model: bert-base-uncased
+[2024-11-29 11:21:27] - Image model: regnet_y_32_linear
+[2024-11-29 11:21:27] - Hidden sizes: [256]
+[2024-11-29 11:21:27] - Use text: False
+[2024-11-29 11:21:27] - Use image: True
+[2024-11-29 11:21:27] - Use caption: True
+[2024-11-29 11:21:27] - Caption mode: CaptionMode.SEPARATE
+[2024-11-29 11:21:27] - Use garbage feature: False
+[2024-11-29 11:21:27] - Use similarity: False
+[2024-11-29 11:21:27] 
+Training Settings:
+[2024-11-29 11:21:27] - Batch size: 24
+[2024-11-29 11:21:27] - Learning rate: 1e-05
+[2024-11-29 11:21:27] - Number of epochs: 50
+[2024-11-29 11:21:27] - Max sequence length: 300
+[2024-11-29 11:21:27] - Dropout rate: 0.3
+[2024-11-29 11:21:27] - Early stopping patience: 5
+[2024-11-29 11:21:27] - Weight decay: 0.01
+[2024-11-29 11:21:27] - Label smoothing: 0.0
+[2024-11-29 11:21:27] 
+2024-11-29 11:21:27 - INFO - Initialized bert-base-uncased tokenizer
+/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/main.py:369: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load('checkpoints/best_model.pt')
+[2024-11-29 11:21:27] Loading Train data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Train
+[2024-11-29 11:21:27] Loading Val data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Val
+[2024-11-29 11:21:27] Loading Test data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Test
+Loaded captions: 15431
+Loaded captions: 15431
+Loaded captions: 15431
+
+Train Dataset Statistics:
+Size: 10200
+Class distribution: {np.int64(0): np.int64(2111), np.int64(1): np.int64(4355), np.int64(2): np.int64(1991), np.int64(3): np.int64(1743)}
+
+Val Dataset Statistics:
+Size: 1800
+Class distribution: {np.int64(0): np.int64(372), np.int64(1): np.int64(768), np.int64(2): np.int64(352), np.int64(3): np.int64(308)}
+
+Test Dataset Statistics:
+Size: 3431
+Class distribution: {np.int64(0): np.int64(695), np.int64(1): np.int64(1085), np.int64(2): np.int64(799), np.int64(3): np.int64(852)}
+[2024-11-29 11:21:33] Phase 1: Training classifier with frozen feature extractors
+Model mode: False
+[2024-11-29 11:53:25] Epoch 1/50 - Train Loss: 0.5614 - Val Loss: 0.4595 - Val Acc: 0.8428
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-29 11:53:31] Save best_model.pt for Loss at epochs 1 
+Model mode: False
+[2024-11-29 12:25:18] Epoch 2/50 - Train Loss: 0.2609 - Val Loss: 0.4209 - Val Acc: 0.8506
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-29 12:25:24] Save best_model.pt for Loss at epochs 2 
+Model mode: False
+[2024-11-29 12:57:04] Epoch 3/50 - Train Loss: 0.1535 - Val Loss: 0.4285 - Val Acc: 0.8606
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-29 12:57:10] Save best_model.pt for Accuracy at epochs 3 
+Model mode: False
+[2024-11-29 13:28:53] Epoch 4/50 - Train Loss: 0.0977 - Val Loss: 0.4667 - Val Acc: 0.8594
+Model mode: False
+[2024-11-29 14:00:48] Epoch 5/50 - Train Loss: 0.0857 - Val Loss: 0.4586 - Val Acc: 0.8644
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-29 14:00:54] Save best_model.pt for Accuracy at epochs 5 
+Model mode: False
+[2024-11-29 14:32:51] Epoch 6/50 - Train Loss: 0.0586 - Val Loss: 0.4820 - Val Acc: 0.8656
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-29 14:32:57] Save best_model.pt for Accuracy at epochs 6 
+Model mode: False
+[2024-11-29 15:04:55] Epoch 7/50 - Train Loss: 0.0392 - Val Loss: 0.4942 - Val Acc: 0.8656
+Model mode: False
+[2024-11-29 15:36:49] Learning rate updated to: 1.0000000000000002e-06
+[2024-11-29 15:36:49] Epoch 8/50 - Train Loss: 0.0341 - Val Loss: 0.5490 - Val Acc: 0.8550
+Model mode: False
+[2024-11-29 16:08:42] Epoch 9/50 - Train Loss: 0.0338 - Val Loss: 0.5181 - Val Acc: 0.8672
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-29 16:08:48] Save best_model.pt for Accuracy at epochs 9 
+Model mode: False
+[2024-11-29 16:40:43] Epoch 10/50 - Train Loss: 0.0250 - Val Loss: 0.5179 - Val Acc: 0.8661
+Model mode: False
+[2024-11-29 17:12:36] Epoch 11/50 - Train Loss: 0.0220 - Val Loss: 0.5232 - Val Acc: 0.8700
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-29 17:12:42] Save best_model.pt for Accuracy at epochs 11 
+Model mode: False
+[2024-11-29 17:44:42] Epoch 12/50 - Train Loss: 0.0172 - Val Loss: 0.5290 - Val Acc: 0.8700
+Model mode: False
+[2024-11-29 18:16:36] Epoch 13/50 - Train Loss: 0.0165 - Val Loss: 0.5292 - Val Acc: 0.8750
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-29 18:16:42] Save best_model.pt for Accuracy at epochs 13 
+Model mode: False
+[2024-11-29 18:48:33] Learning rate updated to: 1.0000000000000002e-07
+[2024-11-29 18:48:33] Epoch 14/50 - Train Loss: 0.0154 - Val Loss: 0.5414 - Val Acc: 0.8667
+Model mode: False
+[2024-11-29 19:20:24] Epoch 15/50 - Train Loss: 0.0127 - Val Loss: 0.5494 - Val Acc: 0.8717
+Model mode: False
+[2024-11-29 19:52:12] Epoch 16/50 - Train Loss: 0.0147 - Val Loss: 0.5433 - Val Acc: 0.8694
+Model mode: False
+[2024-11-29 20:23:52] Epoch 17/50 - Train Loss: 0.0151 - Val Loss: 0.5390 - Val Acc: 0.8717
+Model mode: False
+[2024-11-29 20:55:43] Epoch 18/50 - Train Loss: 0.0139 - Val Loss: 0.5602 - Val Acc: 0.8667
+[2024-11-29 20:55:43] Early stopping triggered after epochs 18 
+[2024-11-29 20:55:44] Loading best model from Phase 1
+[2024-11-29 20:55:54] Phase 2: Fine-tuning feature extractors
+
+Feature Extractor States:
+Text model exists: True
+Text model trainable: True
+Image model exists: True
+Image model trainable: True
+Traceback (most recent call last):
+  File "/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/main.py", line 482, in <module>
+    main()
+  File "/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/main.py", line 399, in main
+    fine_tune_history = trainer.train(
+                        ^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/training/trainer.py", line 174, in train
+    train_loss = self.train_epoch(train_loader)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/training/trainer.py", line 66, in train_epoch
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/models/multimodal.py", line 152, in forward
+    image_features = self.image_processor(images)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/models/feature_extractors.py", line 215, in forward
+    features = self.feature_extractor(x)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeffrey.wong1/software/miniforge3/envs/pytorch/lib/python3.12/site-packages/torchvision/models/regnet.py", line 147, in forward
+    x = x + self.f(x)
+        ~~^~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 26.00 MiB. GPU 0 has a total capacity of 14.58 GiB of which 7.56 MiB is free. Including non-PyTorch memory, this process has 14.57 GiB memory in use. Of the allocated memory 13.60 GiB is allocated by PyTorch, and 847.34 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[nltk_data] Downloading package wordnet to
+[nltk_data]     /home/jeffrey.wong1/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/jeffrey.wong1/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+2024-11-29 20:56:14 - INFO - Using device: cuda
+[2024-11-29 20:56:14] 
+Configuration:
+[2024-11-29 20:56:14] Mode: test
+[2024-11-29 20:56:14] Modality: caption_image
+[2024-11-29 20:56:14] Criterion: CrossEntropyLoss
+[2024-11-29 20:56:14] 
+Model Settings:
+[2024-11-29 20:56:14] - Number of classes: 4
+[2024-11-29 20:56:14] - Text model: bert-base-uncased
+[2024-11-29 20:56:14] - Image model: regnet_y_32_linear
+[2024-11-29 20:56:14] - Hidden sizes: [256]
+[2024-11-29 20:56:14] - Use text: False
+[2024-11-29 20:56:14] - Use image: True
+[2024-11-29 20:56:14] - Use caption: True
+[2024-11-29 20:56:14] - Caption mode: CaptionMode.SEPARATE
+[2024-11-29 20:56:14] - Use garbage feature: False
+[2024-11-29 20:56:14] - Use similarity: False
+[2024-11-29 20:56:14] 
+Training Settings:
+[2024-11-29 20:56:14] - Batch size: 24
+[2024-11-29 20:56:14] - Learning rate: 1e-05
+[2024-11-29 20:56:14] - Number of epochs: 50
+[2024-11-29 20:56:14] - Max sequence length: 300
+[2024-11-29 20:56:14] - Dropout rate: 0.3
+[2024-11-29 20:56:14] - Early stopping patience: 5
+[2024-11-29 20:56:14] - Weight decay: 0.01
+[2024-11-29 20:56:14] - Label smoothing: 0.0
+[2024-11-29 20:56:14] 
+2024-11-29 20:56:14 - INFO - Initialized bert-base-uncased tokenizer
+/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/main.py:448: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load('checkpoints/best_model.pt')
+[2024-11-29 20:56:14] Loading Train data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Train
+[2024-11-29 20:56:14] Loading Val data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Val
+[2024-11-29 20:56:14] Loading Test data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Test
+Loaded captions: 15431
+Loaded captions: 15431
+Loaded captions: 15431
+
+Train Dataset Statistics:
+Size: 10200
+Class distribution: {np.int64(0): np.int64(2111), np.int64(1): np.int64(4355), np.int64(2): np.int64(1991), np.int64(3): np.int64(1743)}
+
+Val Dataset Statistics:
+Size: 1800
+Class distribution: {np.int64(0): np.int64(372), np.int64(1): np.int64(768), np.int64(2): np.int64(352), np.int64(3): np.int64(308)}
+
+Test Dataset Statistics:
+Size: 3431
+Class distribution: {np.int64(0): np.int64(695), np.int64(1): np.int64(1085), np.int64(2): np.int64(799), np.int64(3): np.int64(852)}
+Model mode: False
+test_results['accuracy'] 0.8376566598659283
+test_results['precision'] 0.8420275130085123
+test_results['recall'] 0.8376566598659283
+test_results['f1'] 0.8359230784997362
+test_results['loss'] 0.6349847944831097
+
+Confusion Matrix:
+--------------------------------------------------
+[[465 141  21  68]
+ [ 37 991  35  22]
+ [ 22  44 731   2]
+ [ 43 112  10 687]]
+Classification results saved to test_classification_results.json

@@ -1,0 +1,202 @@
+[nltk_data] Downloading package wordnet to
+[nltk_data]     /home/jeffrey.wong1/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/jeffrey.wong1/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+2024-11-18 22:17:09 - INFO - Using device: cuda
+2024-11-18 22:17:09 - INFO - Initialized distilbert-base-uncased tokenizer
+/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/main.py:346: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load('checkpoints/best_model.pt')
+[2024-11-18 22:17:09] 
+Configuration:
+[2024-11-18 22:17:09] Mode: train
+[2024-11-18 22:17:09] Modality: text_only
+[2024-11-18 22:17:09] 
+Model Settings:
+[2024-11-18 22:17:09] - Number of classes: 4
+[2024-11-18 22:17:09] - Text model: distilbert-base-uncased
+[2024-11-18 22:17:09] - Image model: resnet18
+[2024-11-18 22:17:09] - Hidden sizes: [256]
+[2024-11-18 22:17:09] - Use text: True
+[2024-11-18 22:17:09] - Use image: False
+[2024-11-18 22:17:09] - Use caption: False
+[2024-11-18 22:17:09] - Caption mode: CaptionMode.NONE
+[2024-11-18 22:17:09] - Use garbage feature: False
+[2024-11-18 22:17:09] - Use similarity: False
+[2024-11-18 22:17:09] 
+Training Settings:
+[2024-11-18 22:17:09] - Batch size: 24
+[2024-11-18 22:17:09] - Learning rate: 1e-05
+[2024-11-18 22:17:09] - Number of epochs: 50
+[2024-11-18 22:17:09] - Max sequence length: 300
+[2024-11-18 22:17:09] - Dropout rate: 0.3
+[2024-11-18 22:17:09] - Early stopping patience: 5
+[2024-11-18 22:17:09] - Weight decay: 0.01
+[2024-11-18 22:17:09] - Label smoothing: 0.0
+[2024-11-18 22:17:09] 
+[2024-11-18 22:17:09] Loading data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Train
+
+Train Dataset Statistics:
+Size: 10200
+Class distribution: {np.int64(0): np.int64(2111), np.int64(1): np.int64(4355), np.int64(2): np.int64(1991), np.int64(3): np.int64(1743)}
+
+Val Dataset Statistics:
+Size: 1800
+Class distribution: {np.int64(0): np.int64(372), np.int64(1): np.int64(768), np.int64(2): np.int64(352), np.int64(3): np.int64(308)}
+
+Test Dataset Statistics:
+Size: 3431
+Class distribution: {np.int64(0): np.int64(695), np.int64(1): np.int64(1085), np.int64(2): np.int64(799), np.int64(3): np.int64(852)}
+[2024-11-18 22:17:10] Phase 1: Training classifier with frozen feature extractors
+Model mode: False
+[2024-11-18 22:21:22] Epoch 1/50 - Train Loss: 0.5933 - Val Loss: 0.4297 - Val Acc: 0.8444
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-18 22:21:23] Save best_model.pt for Loss at epochs 1 
+Model mode: False
+[2024-11-18 22:25:36] Epoch 2/50 - Train Loss: 0.3349 - Val Loss: 0.3452 - Val Acc: 0.8778
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-18 22:25:37] Save best_model.pt for Loss at epochs 2 
+Model mode: False
+[2024-11-18 22:29:48] Epoch 3/50 - Train Loss: 0.2844 - Val Loss: 0.3459 - Val Acc: 0.8767
+Model mode: False
+[2024-11-18 22:33:59] Epoch 4/50 - Train Loss: 0.2367 - Val Loss: 0.3414 - Val Acc: 0.8872
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-18 22:34:00] Save best_model.pt for Loss at epochs 4 
+Model mode: False
+[2024-11-18 22:38:11] Epoch 5/50 - Train Loss: 0.2202 - Val Loss: 0.3460 - Val Acc: 0.8894
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-18 22:38:12] Save best_model.pt for Accuracy at epochs 5 
+Model mode: False
+[2024-11-18 22:42:24] Epoch 6/50 - Train Loss: 0.1865 - Val Loss: 0.3447 - Val Acc: 0.8872
+Model mode: False
+[2024-11-18 22:46:35] Epoch 7/50 - Train Loss: 0.1649 - Val Loss: 0.3727 - Val Acc: 0.8783
+Model mode: False
+[2024-11-18 22:50:46] Epoch 8/50 - Train Loss: 0.1445 - Val Loss: 0.3725 - Val Acc: 0.8889
+Model mode: False
+[2024-11-18 22:54:57] Epoch 9/50 - Train Loss: 0.1262 - Val Loss: 0.3792 - Val Acc: 0.8894
+Model mode: False
+[2024-11-18 22:59:08] Learning rate updated to: 1.0000000000000002e-06
+[2024-11-18 22:59:08] Epoch 10/50 - Train Loss: 0.1162 - Val Loss: 0.4081 - Val Acc: 0.8878
+[2024-11-18 22:59:08] Early stopping triggered after epochs 10 
+[2024-11-18 22:59:08] Loading best model from Phase 1
+[2024-11-18 22:59:10] Phase 2: Fine-tuning feature extractors
+
+Feature Extractor States:
+Text model trainable: True
+Model mode: False
+[2024-11-18 23:03:21] Epoch 1/50 - Train Loss: 0.1831 - Val Loss: 0.3391 - Val Acc: 0.8889
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-18 23:03:22] Save best_model.pt for Loss at epochs 1 
+Model mode: False
+[2024-11-18 23:07:33] Epoch 2/50 - Train Loss: 0.1789 - Val Loss: 0.3295 - Val Acc: 0.8878
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-18 23:07:34] Save best_model.pt for Loss at epochs 2 
+Model mode: False
+[2024-11-18 23:11:45] Epoch 3/50 - Train Loss: 0.1693 - Val Loss: 0.3422 - Val Acc: 0.8878
+Model mode: False
+[2024-11-18 23:15:56] Epoch 4/50 - Train Loss: 0.1740 - Val Loss: 0.3575 - Val Acc: 0.8867
+Model mode: False
+[2024-11-18 23:20:07] Epoch 5/50 - Train Loss: 0.1495 - Val Loss: 0.3442 - Val Acc: 0.8906
+Checkpoint saved to checkpoints/best_model.pt
+[2024-11-18 23:20:08] Save best_model.pt for Accuracy at epochs 5 
+Model mode: False
+[2024-11-18 23:24:19] Epoch 6/50 - Train Loss: 0.1532 - Val Loss: 0.3502 - Val Acc: 0.8889
+Model mode: False
+[2024-11-18 23:28:30] Epoch 7/50 - Train Loss: 0.1510 - Val Loss: 0.3361 - Val Acc: 0.8894
+Model mode: False
+[2024-11-18 23:32:41] Learning rate updated to: 1.0000000000000002e-07
+[2024-11-18 23:32:41] Epoch 8/50 - Train Loss: 0.1528 - Val Loss: 0.3376 - Val Acc: 0.8894
+Model mode: False
+[2024-11-18 23:36:52] Epoch 9/50 - Train Loss: 0.1483 - Val Loss: 0.3555 - Val Acc: 0.8811
+Model mode: False
+[2024-11-18 23:41:03] Epoch 10/50 - Train Loss: 0.1427 - Val Loss: 0.3469 - Val Acc: 0.8878
+[2024-11-18 23:41:03] Early stopping triggered after epochs 10 
+[nltk_data] Downloading package wordnet to
+[nltk_data]     /home/jeffrey.wong1/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/jeffrey.wong1/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+2024-11-18 23:41:18 - INFO - Using device: cuda
+2024-11-18 23:41:18 - INFO - Initialized distilbert-base-uncased tokenizer
+/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/main.py:424: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load('checkpoints/best_model.pt')
+[2024-11-18 23:41:18] 
+Configuration:
+[2024-11-18 23:41:18] Mode: test
+[2024-11-18 23:41:18] Modality: text_only
+[2024-11-18 23:41:18] 
+Model Settings:
+[2024-11-18 23:41:18] - Number of classes: 4
+[2024-11-18 23:41:18] - Text model: distilbert-base-uncased
+[2024-11-18 23:41:18] - Image model: resnet18
+[2024-11-18 23:41:18] - Hidden sizes: [256]
+[2024-11-18 23:41:18] - Use text: True
+[2024-11-18 23:41:18] - Use image: False
+[2024-11-18 23:41:18] - Use caption: False
+[2024-11-18 23:41:18] - Caption mode: CaptionMode.NONE
+[2024-11-18 23:41:18] - Use garbage feature: False
+[2024-11-18 23:41:18] - Use similarity: False
+[2024-11-18 23:41:18] 
+Training Settings:
+[2024-11-18 23:41:18] - Batch size: 24
+[2024-11-18 23:41:18] - Learning rate: 1e-05
+[2024-11-18 23:41:18] - Number of epochs: 50
+[2024-11-18 23:41:18] - Max sequence length: 300
+[2024-11-18 23:41:18] - Dropout rate: 0.3
+[2024-11-18 23:41:18] - Early stopping patience: 5
+[2024-11-18 23:41:18] - Weight decay: 0.01
+[2024-11-18 23:41:18] - Label smoothing: 0.0
+[2024-11-18 23:41:18] 
+[2024-11-18 23:41:18] Loading data from: /work/TALC/enel645_2024f/garbage_data/CVPR_2024_dataset_Train
+
+Train Dataset Statistics:
+Size: 10200
+Class distribution: {np.int64(0): np.int64(2111), np.int64(1): np.int64(4355), np.int64(2): np.int64(1991), np.int64(3): np.int64(1743)}
+
+Val Dataset Statistics:
+Size: 1800
+Class distribution: {np.int64(0): np.int64(372), np.int64(1): np.int64(768), np.int64(2): np.int64(352), np.int64(3): np.int64(308)}
+
+Test Dataset Statistics:
+Size: 3431
+Class distribution: {np.int64(0): np.int64(695), np.int64(1): np.int64(1085), np.int64(2): np.int64(799), np.int64(3): np.int64(852)}
+
+DataLoader Inspection:
+--------------------------------------------------
+
+Batch 1:
+
+Text Inputs:
+input_ids shape: torch.Size([24, 300])
+attention_mask shape: torch.Size([24, 300])
+input_ids range: (0, 26639)
+
+Labels:
+labels shape: torch.Size([24])
+unique labels: [0]
+==================================================
+
+Batch 2:
+
+Text Inputs:
+input_ids shape: torch.Size([24, 300])
+attention_mask shape: torch.Size([24, 300])
+input_ids range: (0, 27962)
+
+Labels:
+labels shape: torch.Size([24])
+unique labels: [0]
+==================================================
+Model mode: False
+{'accuracy': 0.8446517050422617, 'precision': np.float64(0.8468249649213432), 'recall': np.float64(0.8446517050422617), 'f1': np.float64(0.8445822727413066), 'loss': 0.5058135551374432}
+Traceback (most recent call last):
+  File "/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/main.py", line 446, in <module>
+    main()
+  File "/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/main.py", line 443, in main
+    plot_confusion_matrix(test_results)
+  File "/home/jeffrey.wong1/github_repo/ENGL645_Fall_2024_Proj/Project-Benchmark/utils/metrics.py", line 121, in plot_confusion_matrix
+    y_true = test_results['true_labels']
+             ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'true_labels'
