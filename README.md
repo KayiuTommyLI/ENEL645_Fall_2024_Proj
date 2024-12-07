@@ -27,10 +27,6 @@ To get started with this project, follow the steps below:
     ```bash
     pip install -r requirements.txt
     ```
-4. Launch Jupyter Notebook:
-    ```bash
-    jupyter notebook
-    ```
 
 ## Project Overview
 
