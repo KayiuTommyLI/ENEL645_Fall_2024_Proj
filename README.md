@@ -1,7 +1,7 @@
 # ENEL645 Fall 2024 Proj
 # Extended Study on Garbage Classification
 
-This repository contains the work and code related to the ENEL 645 Fall 2024 project, titled "Extended Garbage Classification System Study". The primary focus of this project is to develop and study advanced methods for classifying garbage using machine learning techniques.
+This repository contains the work and code related to the ENEL 645 Fall 2024 project, titled "Extended Study on Garbage Classification". The primary focus of this project is to develop and study advanced methods for classifying garbage using machine learning techniques.
 
 ## Getting Started
 
